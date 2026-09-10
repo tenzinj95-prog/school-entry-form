@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Entry Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <header class="header">
+            <div class="logo">
+                SE
+            </div>
+
+            <div class="header-text">
+                <h1>Student Entry Form</h1>
+                <p>Enter student information carefully</p>
+            </div>
+        </header>
+
+
+        <main class="container">
+
+            <div class="form-card">
+
+                <div class="form-heading">
+                    <h2>Student Information</h2>
+                    <p>Fields marked with <span>*</span> are required.</p>
+                </div>
+
+
+                <form id="entryForm"
+                      method="POST"
+                      target="hiddenFrame">
+
+                    <!-- Hidden iframe allows submission to Google Apps Script -->
+                    <iframe name="hiddenFrame"
+                            id="hiddenFrame"
+                            class="hidden-frame"></iframe>
+
+
+                    <!-- Honeypot spam protection -->
+                    <input type="text"
+                           name="website"
+                           id="website"
+                           class="honeypot"
+                           tabindex="-1"
+                           autocomplete="off">
+
+
+                    <div class="form-grid">
+
+                        <!-- Student Name -->
+                        <div class="form-group full">
+                            <label for="studentName">
+                                Student Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                name="studentName"
+                                placeholder="Enter student's full name"
+                                maxlength="100"
+                                autocomplete="name"
+                            >
+
+                            <small class="error" id="studentNameError"></small>
+                        </div>
+
+
+                        <!-- Class -->
+                        <div class="form-group">
+                            <label for="className">
+                                Class <span>*</span>
+                            </label>
+
+                            <select id="className" name="className">
+                                <option value="">Select Class</option>
+                                <option value="PP">PP</option>
+                                <option value="I">I</option>
+                                <option value="II">II</option>
+                                <option value="III">III</option>
+                                <option value="IV">IV</option>
+                                <option value="V">V</option>
+                                <option value="VI">VI</option>
+                                <option value="VII">VII</option>
+                                <option value="VIII">VIII</option>
+                                <option value="IX">IX</option>
+                                <option value="X">X</option>
+                                <option value="XI">XI</option>
+                                <option value="XII">XII</option>
+                            </select>
+
+                            <small class="error" id="classNameError"></small>
+                        </div>
+
+
+                        <!-- Section -->
+                        <div class="form-group">
+                            <label for="section">
+                                Section <span>*</span>
+                            </label>
+
+                            <select id="section" name="section">
+                                <option value="">Select Section</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                            </select>
+
+                            <small class="error" id="sectionError"></small>
+                        </div>
+
+
+                        <!-- Category -->
+                        <div class="form-group">
+                            <label for="category">
+                                Category <span>*</span>
+                            </label>
+
+                            <select id="category" name="category">
+                                <option value="">Select Category</option>
+                                <option value="Academic">Academic</option>
+                                <option value="Games & Sports">Games & Sports</option>
+                                <option value="Cultural">Cultural</option>
+                                <option value="Leadership">Leadership</option>
+                                <option value="Attendance">Attendance</option>
+                                <option value="Other">Other</option>
+                            </select>
+
+                            <small class="error" id="categoryError"></small>
+                        </div>
+
+
+                        <!-- Date -->
+                        <div class="form-group">
+                            <label for="entryDate">
+                                Date <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="entryDate"
+                                name="entryDate"
+                            >
+
+                            <small class="error" id="entryDateError"></small>
+                        </div>
+
+
+                        <!-- Achievement -->
+                        <div class="form-group full">
+                            <label for="achievement">
+                                Achievement / Description <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="achievement"
+                                name="achievement"
+                                rows="5"
+                                maxlength="500"
+                                placeholder="Enter the student's achievement or description..."
+                            ></textarea>
+
+                            <div class="textarea-bottom">
+                                <small class="error" id="achievementError"></small>
+                                <small id="characterCount">0 / 500</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+
+                        <button type="button"
+                                class="clear-button"
+                                id="clearButton">
+                            Clear
+                        </button>
+
+                        <button type="submit"
+                                class="submit-button"
+                                id="submitButton">
+                            <span id="buttonText">Submit Entry</span>
+                            <span id="buttonLoader" class="loader"></span>
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Success Message -->
+                <div id="successMessage" class="message success-message">
+                    <div class="message-icon">✓</div>
+
+                    <div>
+                        <strong>Entry submitted successfully!</strong>
+                        <p>The student information has been recorded.</p>
+                    </div>
+                </div>
+
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="message error-message">
+                    <div class="message-icon">!</div>
+
+                    <div>
+                        <strong>Something went wrong.</strong>
+                        <p>Please check your information and try again.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <footer>
+                <p>Student Entry System</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
