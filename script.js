@@ -10,7 +10,7 @@
 // ============================================================
 
 const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyxGOlFHcE1VGJfmZ1pvalv2GK7NsZ6Ks6BH_pVWlHOY4Yh-_C72uPDA5ViEpf0aY_yKA/execE";
+    "https://script.google.com/macros/s/AKfycbzZq9CjVCUnsx3V2cw_sxpTw_U9_xhFitp0Gf77D-Avl5xu_XTZ9lRcLUMnZVz3kcy6-A/exec";
 
 
 // ============================================================
